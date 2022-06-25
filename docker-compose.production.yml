@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    openaiphoenixbot:
+    open-ai-phoenix-bot:
         build:
             dockerfile: docker/Dockerfile.production
         container_name: openAIPhoenixBotProd

@@ -7,8 +7,8 @@ import { DiscordBot } from './clients/discordBot.client';
 
     console.log('Initialized!');
 
-    if (process.env.BOT_DAILY_GREENTEXT_CRON)
-        new CronJob(process.env.BOT_DAILY_GREENTEXT_CRON, () =>
+    if (process.env.BOT_GREENTEXT_CRON)
+        new CronJob(process.env.BOT_GREENTEXT_CRON, () =>
             discordClient.dailyGreentext(),
         ).start();
 })();

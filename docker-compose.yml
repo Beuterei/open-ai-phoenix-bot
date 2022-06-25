@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    openaiphoenixbot:
+    open-ai-phoenix-bot:
         build:
             args:
                 BASE_VERSION: '17.4-alpine'
@@ -8,7 +8,7 @@ services:
             dockerfile: docker/Dockerfile
 
         environment:
-            BOT_DAILY_GREENTEXT_CRON: ${BOT_DAILY_GREENTEXT_CRON-0 19 * * *}
+            BOT_GREENTEXT_CRON: ${BOT_GREENTEXT_CRON-0 19 * * *}
             BOT_ACTIVITY: ${BOT_ACTIVITY-conquer the world}
             BOT_CHANNEL_ID: ${BOT_CHANNEL_ID?Please provide a channel id}
             BOT_TOKEN: ${BOT_TOKEN?Please provide a bot token}

@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    openaiphoenixbot:
+    open-ai-phoenix-bot:
         container_name: openAIPhoenixBotDev
         volumes:
             - ./src:/app/src:delegated
