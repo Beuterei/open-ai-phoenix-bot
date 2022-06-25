@@ -2,7 +2,7 @@ import Client, { CompletionOpts } from 'openai-api';
 
 const baseOptions: CompletionOpts = {
     engine: 'davinci',
-    maxTokens: 2000,
+    maxTokens: 1000,
     temperature: 0.9,
     topP: 1,
     presencePenalty: 0,
