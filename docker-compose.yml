@@ -7,6 +7,8 @@ services:
             context: ./
             dockerfile: docker/Dockerfile
 
+        restart: unless-stopped
+
         environment:
             BOT_GREENTEXT_CRON: ${BOT_GREENTEXT_CRON-0 19 * * *}
             BOT_ACTIVITY: ${BOT_ACTIVITY-conquer the world}
