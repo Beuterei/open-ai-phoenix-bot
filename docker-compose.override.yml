@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    openaiphoenixbot:
+        container_name: openAIPhoenixBotDev
+        volumes:
+            - ./src:/app/src:delegated
+
+        environment:
+            FORCE_COLOR: 1
