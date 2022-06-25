@@ -11,7 +11,7 @@
   <h3 align="center">open-ai-phoenix-bot</h3>
 
   <p align="center">
-    Tries to provide captcha functionality everywhere where there is none
+    A Discord test bot to have some fun with OpenAi
     <br />
     <br />
     ·
@@ -25,7 +25,9 @@
 
 ## About The Project
 
-A Discord test bot to have some fun with [OpenAI](https://openai.com/)
+A Discord test bot to have some fun with [OpenAI](https://openai.com/).
+
+The name `phoenix` comes from OpenAI itself. I just asked it :)
 
 <!-- GETTING STARTED -->
 
