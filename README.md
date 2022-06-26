@@ -66,10 +66,10 @@ touch .env
 
 | Variable             | Description                         | Default value     | Required |
 | -------------------- | ----------------------------------- | ----------------- | -------- |
-| `BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 19 \* \* \*     | false    |
-| `BOT_ACTIVITY`       | What to show as activity in discord | conquer the world | false    |
-| `BOT_CHANNEL_ID`     | Channel the bot sends to            |                   | true     |
-| `BOT_TOKEN`          | Discord bot token                   |                   | true     |
+| `DISCORD_BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 19 \* \* \*     | false    |
+| `DISCORD_BOT_ACTIVITY`       | What to show as activity in discord | conquer the world | false    |
+| `DISCORD_BOT_CHANNEL_ID`     | Channel the bot sends to            |                   | true     |
+| `DISCORD_BOT_TOKEN`          | Discord bot token                   |                   | true     |
 | `OPENAI_API_KEY`     | OpenAI API token                    |                   | true     |
 
 ## Getting Started Production
@@ -107,10 +107,10 @@ touch .env
 
 | Variable             | Description                         | Default value     | Required |
 | -------------------- | ----------------------------------- | ----------------- | -------- |
-| `BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 19 \* \* \*     | false    |
-| `BOT_ACTIVITY`       | What to show as activity in discord | conquer the world | false    |
-| `BOT_CHANNEL_ID`     | Channel the bot sends to            |                   | true     |
-| `BOT_TOKEN`          | Discord bot token                   |                   | true     |
+| `DISCORD_BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 19 \* \* \*     | false    |
+| `DISCORD_BOT_ACTIVITY`       | What to show as activity in discord | conquer the world | false    |
+| `DISCORD_BOT_CHANNEL_ID`     | Channel the bot sends to            |                   | true     |
+| `DISCORD_BOT_TOKEN`          | Discord bot token                   |                   | true     |
 | `OPENAI_API_KEY`     | OpenAI API token                    |                   | true     |
 
 <!-- CONTRIBUTING -->

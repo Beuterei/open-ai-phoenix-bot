@@ -1,14 +1,16 @@
 import { CronJob } from 'cron';
-import { DiscordBot } from './clients/discordBot.client';
+import { DiscordBotClient } from './clients/discordBot.clientnew';
+import { dailyGreentextHandler } from './cronHandlers/dailyGreentext.handler';
 
 (async () => {
-    const discordClient = new DiscordBot();
+    const discordClient = new DiscordBotClient();
     await discordClient.init();
 
     console.log('Initialized!');
 
-    if (process.env.BOT_GREENTEXT_CRON)
-        new CronJob(process.env.BOT_GREENTEXT_CRON, () =>
-            discordClient.dailyGreentext(),
+    if (process.env.DISCORD_BOT_GREENTEXT_CRON)
+        new CronJob(
+            process.env.DISCORD_BOT_GREENTEXT_CRON,
+            () => () => dailyGreentextHandler(discordClient),
         ).start();
 })();

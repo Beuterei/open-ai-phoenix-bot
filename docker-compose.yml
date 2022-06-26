@@ -10,8 +10,9 @@ services:
         restart: unless-stopped
 
         environment:
-            BOT_GREENTEXT_CRON: ${BOT_GREENTEXT_CRON-0 19 * * *}
-            BOT_ACTIVITY: ${BOT_ACTIVITY-conquer the world}
-            BOT_CHANNEL_ID: ${BOT_CHANNEL_ID?Please provide a channel id}
-            BOT_TOKEN: ${BOT_TOKEN?Please provide a bot token}
+            DISCORD_BOT_GREENTEXT_CRON: ${DISCORD_BOT_GREENTEXT_CRON-0 19 * * *}
+            DISCORD_BOT_ACTIVITY: ${DISCORD_BOT_ACTIVITY-conquer the world}
+            DISCORD_BOT_CHANNEL_ID: ${DISCORD_BOT_CHANNEL_ID?Please provide a channel id}
+            DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN?Please provide a bot token}
+            DISCORD_APP_ID: ${DISCORD_APP_ID?Please provide a application id}
             OPENAI_API_KEY: ${OPENAI_API_KEY?Please provide an OpenAI API key}

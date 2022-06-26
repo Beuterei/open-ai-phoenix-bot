@@ -1,6 +1,6 @@
 import Client, { CompletionOpts } from 'openai-api';
 
-const baseOptions: CompletionOpts = {
+const completionBaseOptions: CompletionOpts = {
     engine: 'text-davinci-002',
     maxTokens: 1000,
     temperature: 0.9,
@@ -12,16 +12,14 @@ const baseOptions: CompletionOpts = {
     stream: false,
 };
 
-export class OpenAI {
-    private client: Client;
-
+export class OpenAI extends Client {
     constructor() {
-        this.client = new Client(process.env.OPENAI_API_KEY || '');
+        super(process.env.OPENAI_API_KEY || '');
     }
 
-    async complete(prompt: string) {
-        const result = await this.client.complete({
-            ...baseOptions,
+    async completePrompt(prompt: string) {
+        const result = await super.complete({
+            ...completionBaseOptions,
             prompt,
         });
 
