@@ -66,7 +66,8 @@ touch .env
 
 | Variable                     | Description                         | Default value     | Required |
 | ---------------------------- | ----------------------------------- | ----------------- | -------- |
-| `DISCORD_BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 19 \* \* \*     | false    |
+| `DISCORD_BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 17 \* \* \*     | false    |
+| `DISCORD_BOT_WIKI_CRON`      | Send a automatic AI wiki article    | 0 16 \* \* \*     | false    |
 | `DISCORD_BOT_ACTIVITY`       | What to show as activity in discord | conquer the world | false    |
 | `DISCORD_BOT_CHANNEL_ID`     | Channel the bot sends to            |                   | true     |
 | `DISCORD_BOT_TOKEN`          | Discord bot token                   |                   | true     |
@@ -108,7 +109,8 @@ touch .env
 
 | Variable                     | Description                         | Default value     | Required |
 | ---------------------------- | ----------------------------------- | ----------------- | -------- |
-| `DISCORD_BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 19 \* \* \*     | false    |
+| `DISCORD_BOT_GREENTEXT_CRON` | Send a automatic AI greentext       | 0 17 \* \* \*     | false    |
+| `DISCORD_BOT_WIKI_CRON`      | Send a automatic AI wiki article    | 0 16 \* \* \*     | false    |
 | `DISCORD_BOT_ACTIVITY`       | What to show as activity in discord | conquer the world | false    |
 | `DISCORD_BOT_CHANNEL_ID`     | Channel the bot sends to            |                   | true     |
 | `DISCORD_BOT_TOKEN`          | Discord bot token                   |                   | true     |

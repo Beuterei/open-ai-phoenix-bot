@@ -3,7 +3,7 @@ import { DiscordBotClient } from '../clients/discordBot.client';
 import { OpenAI } from '../clients/openai.client';
 import { getTextChannel, formatDiscordString } from '../util/discord.helper';
 
-export const dailyGreentextHandler = async (client: DiscordBotClient) => {
+export const greentextHandler = async (client: DiscordBotClient) => {
     const channel = getTextChannel(process.env.DISCORD_BOT_CHANNEL_ID || '', client);
     console.log('Time for an automated greentext!');
 
@@ -19,7 +19,7 @@ export const dailyGreentextHandler = async (client: DiscordBotClient) => {
 
     const greentextEmbed = new MessageEmbed()
         .setColor('#7f9739')
-        .setTitle('dailygreentext.png')
+        .setTitle('randomgreentext.png')
         .setDescription(answer);
 
     channel.send({ embeds: [greentextEmbed] });
