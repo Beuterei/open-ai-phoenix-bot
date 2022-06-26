@@ -1,7 +1,7 @@
 import { MessageEmbed } from 'discord.js';
-import { DiscordBotClient } from '../clients/discordBot.clientnew';
+import { DiscordBotClient } from '../clients/discordBot.client';
 import { OpenAI } from '../clients/openai.client';
-import { getTextChannel, sterilizeString } from '../util/discord.helper';
+import { getTextChannel, formatDiscordString } from '../util/discord.helper';
 
 export const dailyGreentextHandler = async (client: DiscordBotClient) => {
     const channel = getTextChannel(process.env.DISCORD_BOT_CHANNEL_ID || '', client);
@@ -13,7 +13,7 @@ export const dailyGreentextHandler = async (client: DiscordBotClient) => {
 
     const res = await openAiClient.completePrompt(`write a 4chan greentext \n${entryText}`);
 
-    const answer = sterilizeString(entryText + res.choices[0].text);
+    const answer = formatDiscordString(entryText + res.choices[0].text);
 
     console.log(`Send ${answer.split('\n').join('')}`);
 

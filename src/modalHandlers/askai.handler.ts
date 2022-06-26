@@ -1,9 +1,11 @@
 import { MessageEmbed } from 'discord.js';
 import { OpenAI } from '../clients/openai.client';
 import { ModalID } from '../shared/discord';
-import { registerModalHandler, sterilizeString } from '../util/discord.helper';
+import { registerModalHandler, formatDiscordString } from '../util/discord.helper';
 
 export = registerModalHandler(ModalID.ASK_AI, async modal => {
+    await modal.deferReply({});
+
     const prompt = modal.getTextInputValue('prompt');
 
     const entryText = `${prompt}\n`;
@@ -12,7 +14,7 @@ export = registerModalHandler(ModalID.ASK_AI, async modal => {
 
     const res = await openAiClient.completePrompt(entryText);
 
-    const answer = sterilizeString(entryText + res.choices[0].text);
+    const answer = formatDiscordString(entryText + res.choices[0].text);
 
     console.log(`Send ${answer.split('\n').join('')}`);
 
@@ -21,5 +23,5 @@ export = registerModalHandler(ModalID.ASK_AI, async modal => {
         .setTitle('OpenAI:')
         .setDescription(answer);
 
-    modal.reply({ embeds: [greentextEmbed] });
+    modal.editReply({ embeds: [greentextEmbed] });
 });

@@ -1,5 +1,5 @@
 import { CronJob } from 'cron';
-import { DiscordBotClient } from './clients/discordBot.clientnew';
+import { DiscordBotClient } from './clients/discordBot.client';
 import { dailyGreentextHandler } from './cronHandlers/dailyGreentext.handler';
 
 (async () => {

@@ -2,8 +2,11 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 import discordEscape from 'discord-escape';
 import { ModalSubmitInteraction } from 'discord-modals';
 import { CommandInteraction, TextChannel } from 'discord.js';
-import { DiscordBotClient } from '../clients/discordBot.clientnew';
+import { DiscordBotClient } from '../clients/discordBot.client';
 import { ModalID } from '../shared/discord';
+
+const lengthCut = '[...]';
+const maxLength = 4000;
 
 export const registerCommand = (
     builder: Partial<SlashCommandBuilder>,
@@ -15,15 +18,21 @@ export const registerModalHandler = (
     handler: (modal: ModalSubmitInteraction) => void,
 ) => ({ customId, handler });
 
-export const sterilizeString = (str: string) => discordEscape(str).replace(/[\r\n]{2,}/g, "\n");
+export const formatDiscordString = (str: string) => {
+    let result = discordEscape(str).replace(/[\r\n]{2,}/g, '\n');
+
+    if (result.length >= maxLength) {
+        result = result.substring(0, maxLength - lengthCut.length) + lengthCut;
+    }
+
+    return result;
+};
 
 export const getTextChannel = (channelId: string, client: DiscordBotClient) => {
-    const channel = client.channels.cache.find(
-        channel => channel.id === channelId,
-    );
+    const channel = client.channels.cache.find(channel => channel.id === channelId);
 
     if (!channel || !channel.isText())
         throw new Error('Channel id not found or channel is not a text channel');
 
-        return channel as TextChannel;
-}
+    return channel as TextChannel;
+};
