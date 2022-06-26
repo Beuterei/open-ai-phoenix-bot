@@ -10,7 +10,7 @@ services:
         restart: unless-stopped
 
         environment:
-            DISCORD_BOT_GREENTEXT_CRON: ${DISCORD_BOT_GREENTEXT_CRON-0 19 * * *}
+            DISCORD_BOT_GREENTEXT_CRON: ${DISCORD_BOT_GREENTEXT_CRON-0 17 * * *}
             DISCORD_BOT_ACTIVITY: ${DISCORD_BOT_ACTIVITY-conquer the world}
             DISCORD_BOT_CHANNEL_ID: ${DISCORD_BOT_CHANNEL_ID?Please provide a channel id}
             DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN?Please provide a bot token}
