@@ -12,12 +12,12 @@ import { wikipediaHandler } from './cronHandlers/wikipedia.handler';
     if (process.env.DISCORD_BOT_GREENTEXT_CRON)
         new CronJob(
             process.env.DISCORD_BOT_GREENTEXT_CRON,
-            () => () => greentextHandler(discordClient),
+            () => greentextHandler(discordClient),
         ).start();
 
     if (process.env.DISCORD_BOT_WIKI_CRON)
         new CronJob(
             process.env.DISCORD_BOT_WIKI_CRON,
-            () => () => wikipediaHandler(discordClient),
+            () => wikipediaHandler(discordClient),
         ).start();
 })();

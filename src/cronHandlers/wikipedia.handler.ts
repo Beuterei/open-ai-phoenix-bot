@@ -10,9 +10,7 @@ export const wikipediaHandler = async (client: DiscordBotClient) => {
 
     const res = await openAiClient.completePrompt('Say a random wiki article link.\n');
 
-    const answer = formatDiscordString(res.choices[0].text);
+    console.log(`Send ${res.choices[0].text.split('\n').join('')}`);
 
-    console.log(`Send ${answer.split('\n').join('')}`);
-
-    channel.send(answer);
+    channel.send(res.choices[0].text);
 };
