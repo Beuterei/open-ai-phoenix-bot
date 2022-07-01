@@ -19,7 +19,8 @@ export const registerModalHandler = (
 ) => ({ customId, handler });
 
 export const formatDiscordString = (str: string) => {
-    let result = discordEscape(str).replace(/[\r\n]{2,}/g, '\n');
+    console.log(discordEscape(str).replace(/[\r\n]{2,}/g, '\n'));
+    let result = discordEscape(str).replace(/[\r\n]{2,}/g, '\n').replace(/\\>(?: |\t)*\n/g, '');
 
     if (result.length >= maxLength) {
         result = result.substring(0, maxLength - lengthCut.length) + lengthCut;

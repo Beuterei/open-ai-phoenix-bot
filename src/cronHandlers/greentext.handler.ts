@@ -11,7 +11,7 @@ export const greentextHandler = async (client: DiscordBotClient) => {
 
     const openAiClient = new OpenAI();
 
-    const res = await openAiClient.completePrompt(`write a 4chan greentext \n${entryText}`);
+    const res = await openAiClient.completePrompt(`write a 4chan greentext\n${entryText}`);
 
     const answer = formatDiscordString(entryText + res.choices[0].text);
 

@@ -10,14 +10,12 @@ import { wikipediaHandler } from './cronHandlers/wikipedia.handler';
     console.log('Initialized!');
 
     if (process.env.DISCORD_BOT_GREENTEXT_CRON)
-        new CronJob(
-            process.env.DISCORD_BOT_GREENTEXT_CRON,
-            () => greentextHandler(discordClient),
+        new CronJob(process.env.DISCORD_BOT_GREENTEXT_CRON, () =>
+            greentextHandler(discordClient),
         ).start();
 
     if (process.env.DISCORD_BOT_WIKI_CRON)
-        new CronJob(
-            process.env.DISCORD_BOT_WIKI_CRON,
-            () => wikipediaHandler(discordClient),
+        new CronJob(process.env.DISCORD_BOT_WIKI_CRON, () =>
+            wikipediaHandler(discordClient),
         ).start();
 })();
