@@ -21,6 +21,10 @@
   </p>
 </p>
 
+> :warning: I am not responsible for what the AI is generating. Some stuff is NSFW so be aware!
+
+> :warning: I use some greentext datasets. I only format those and did not filter the content. I want to stay as true as possible to the real deal. [Dataset used](https://github.com/AndreyATGB/Greentext-dataset)
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
